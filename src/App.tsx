@@ -7,9 +7,13 @@ function App() {
   return (
     <Grid
       templateAreas={{
-        // Defining layout of all screen sizes
+        // Defining layout for all screen sizes
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
+      }}
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
       }}
     >
       {/* Navigation bar */}
@@ -17,7 +21,7 @@ function App() {
         <NavBar />
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside">
+        <GridItem area="aside" paddingX={5}>
           <GenreList />
         </GridItem>
       </Show>
