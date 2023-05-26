@@ -1,4 +1,4 @@
-import useData from "./useData";
+import genres from "../data/genres";
 
 // refer to API documentation for more  details.
 export interface Genre {
@@ -6,6 +6,6 @@ export interface Genre {
   name: string;
   image_background: string;
 }
-const useGenres = () => useData<Genre>("/genres"); // hiding details about HTTP request (such as endpoints) behind a hook.
+const useGenres = () => ({ data: genres, isLoading: false, error: null });
 
 export default useGenres;
